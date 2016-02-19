@@ -1,4 +1,5 @@
 Project-Rails - Blogger
+
 Build a rails blog application for the Oden Project Curriculum:
 http://www.theodinproject.com/web-development-101/ruby-on-rails
 
