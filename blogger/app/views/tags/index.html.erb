@@ -3,7 +3,11 @@
 <ul id="articles">
 	<% @tags.each do |tag| %>
 		<li>
-			<%= link_to tag.name, tag_path(tag) %> <%= link_to "Delete", tag_path(tag), method: :delete, data: {confirm: "Are you sure you want to delete the tag?"} %>
+			<%= link_to tag.name, tag_path(tag) %>
+
+			<% if logged_in? %>
+			<%= link_to "Delete", tag_path(tag), method: :delete, data: {confirm: "Are you sure you want to delete the tag?"} %>
+			<% end %>
 		</li>
 	<% end %>
 </ul>
@@ -11,4 +15,6 @@
 <br>
 <%= link_to "<< Back to Articles List", articles_path %>
 
+<% if logged_in? %>
 <%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
+<% end %>
